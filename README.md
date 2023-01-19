@@ -123,9 +123,9 @@ MaxPlayers=8
 * Builder.ini - builder config
 * Game.Template.ini - base for your config
 
-### How to share templates for my mod (or default)
+### How to share templates for your mod (or default template)
 1. Make fork of project
-1. Clone your project
+1. Clone your fork
 1. Do changes
 1. Commit
 1. Push
