@@ -2,19 +2,19 @@
 
 Designed to help configuring server config, manage existing and your own mod configs.
 
-#### Problem with editing Game.ini:
+### Problem with editing Game.ini:
 * All config in one file, when it big, it's hard to navigate.
 * To add mod, you should edit different places in the file.
 * Mods specified by ids, and if you use multiple mods, and want to disable one mod temporary, it hard to find which one id you should remove. Also need to remove rest of config, like mod specific maps, mod init lines, and it is not so easy to find it too.
 * If you want return back mod again - you need install it from beginning.
 * Comments could help to manage mods, but server recreates Game.ini again and clean it all.
 
-#### What builder do:
+### What builder do:
 * Searching for every *.ini file in directories and merges it to Game.Template.ini (you can specify your own directories).
 * Do backup of your existing Game.ini (can be disabled).
 * Copies merged ini to Game.ini.
 
-#### Profit:
+### Profit:
 * You can split your config and use single ini file for single mod or config part.
 * You can disable mod or config part just by moving file out of search directory or by adding prefix "#" in filename.
 * You can split your own mods you develop now and mods from different devs.
@@ -56,7 +56,7 @@ MapRotation=HRD_Noria
 MapRotation=HRD_Dungeon
 ```
 
-#### Default/HordeMaps.ini
+#### Mods/ServerSideCommands.ini
 ```ini
 [/Script/Mordhau.MordhauGameMode]
 SpawnServerActorsOnMapLoad=/ServerSideCmds/BP_ServerSideCMDs.BP_ServerSideCMDs_C
@@ -65,7 +65,7 @@ SpawnServerActorsOnMapLoad=/ServerSideCmds/BP_ServerSideCMDs.BP_ServerSideCMDs_C
 Mods=1700790
 ```
 
-#### Default/HordeMaps.ini
+#### Mods/YodaSeller.ini
 ```ini
 [/Script/Mordhau.MordhauGameSession]
 Mods=2713507
