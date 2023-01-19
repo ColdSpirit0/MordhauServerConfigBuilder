@@ -1,0 +1,8 @@
+/.vs
+/Backups/*
+/Private/*
+/MyMods/*
+/Mods/*
+/Default/*
+
+!.placeholder
