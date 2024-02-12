@@ -1,8 +1,10 @@
+__pycache__
 /.vs
 /Backups/*
-/Private/*
-/MyMods/*
-/Mods/*
-/Default/*
+
+/configs/Private/*
+!/configs/Private/example_private.ini
+
+/configs/MyMods/*
 
 !.placeholder

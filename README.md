@@ -2,31 +2,51 @@
 
 Designed to help configuring server config, manage existing and your own mod configs.
 
-### Problem with editing Game.ini:
-* All config in one file, when it big, it's hard to navigate.
-* To add mod, you should edit different places in the file.
-* Mods specified by ids, and if you use multiple mods, and want to disable one mod temporary, it hard to find which one id you should remove. Also need to remove rest of config, like mod specific maps, mod init lines, and it is not so easy to find it too.
-* If you want return back mod again - you need install it from beginning.
-* Comments could help to manage mods, but server recreates Game.ini again and clean it all.
+### Table of Contents
+
+1. [Introduction](#mordhau-server-config-builder)
+1. [Functionality](#what-builder-do)
+1. [Motivation](#why-i-made-builder-problems-with-editing-gameini)
+1. [Benefits](#benefits)
+1. [Example](#example)
+1. [How to use](#how-to-use)
+1. [Directory Structure](#existing-directory-structure)
+1. [Sharing Templates](#how-to-share-templates-for-your-mod-or-default-template)
+
+
 
 ### What builder do:
-* Searching for every *.ini file in directories and merges it to Game.Template.ini (you can specify your own directories).
-* Do backup of your existing Game.ini (can be disabled).
-* Copies merged ini to Game.ini.
 
-### Profit:
-* You can split your config and use single ini file for single mod or config part.
-* You can disable mod or config part just by moving file out of search directory or by adding prefix "#" in filename.
-* You can split your own mods you develop now and mods from different devs.
-* You can make templates for your mod to share it with server hosters community.
-* You can write comments in your ini files.
+* Searches for every *.ini file in directories and merges it to Game.Template.ini (you can specify your own directories).
+* Backs up your existing Game.ini (this can be disabled).
+* Copies the merged ini to Game.ini in the server's config directory.
+
+
+### Why I made builder (problems with editing Game.ini):
+
+* All configurations are in one file, which makes it hard to navigate when it is large.
+* Adding a mod configuration requires editing different places in the file.
+* Mods are specified by IDs, and if you use multiple mods and want to disable one temporarily, it is hard to find which ID you should remove. Additionally, you need to remove the rest of the config, such as mod-specific maps and mod init lines, which is not so easy to find.
+* If you want to bring back a mod, you need to reinstall it from the beginning.
+* Comments could help manage mods, but the server recreates Game.ini again and cleans it all.
+
+
+### Benefits:
+
+* You can split your config and use a single INI file for a single mod or config part.
+* You can disable a mod or config part just by moving the file out of the search directory or by adding a "#" prefix to the filename.
+* You can split your own mods you develop now and mods from different developers.
+* You can make templates for your mod to share them with the server hosting community.
+* You can write comments in your INI files.
+
 
 ### Example
 
 <details>
 <summary>Spoiler</summary>
 
-#### Game.Template.ini
+#### Game. Template.ini
+
 ```ini
 [/Script/Mordhau.MordhauGameMode]
 bIsThirdPersonCameraDisabled=False
@@ -57,6 +77,7 @@ MapRotation=HRD_Dungeon
 ```
 
 #### Mods/ServerSideCommands.ini
+
 ```ini
 [/Script/Mordhau.MordhauGameMode]
 SpawnServerActorsOnMapLoad=/ServerSideCmds/BP_ServerSideCMDs.BP_ServerSideCMDs_C
@@ -66,6 +87,7 @@ Mods=1700790
 ```
 
 #### Mods/YodaSeller.ini
+
 ```ini
 [/Script/Mordhau.MordhauGameSession]
 Mods=2713507
@@ -75,6 +97,7 @@ SpawnServerActorsOnMapLoad=/YodaSeller/YodaSellerInit.YodaSellerInit_C
 ```
 
 #### Game.ini output
+
 ```ini
 [/Script/Mordhau.MordhauGameMode]
 bIsThirdPersonCameraDisabled=False
@@ -105,28 +128,33 @@ MaxPlayers=8
 </details>
 
 ### How to use
-1. Clone project or download archive to directory you like.
-1. In Builder.ini specify path to your "Game.ini" directory.
-1. Add or remove ModsDir, to specify which directories script will search ini files.
-1. Edit Game.Template.ini to make it base for Game.ini
-1. Copy from Templates to Mods/Default (or dir you specified) configs you want to include to your config. Edit copied configs if you want.
-1. Run build.bat
-1. Check your Game.ini for changes.
+
+1. Clone the project or download the archive to the directory of your choice.
+1. In `Builder.ini`:
+    - Specify the path to your `Game.ini` file.
+    - Add or remove the `ModsDir` key-value pair to specify which directories the script will search for ini files.
+1. Edit `Game.Template.ini` to use it as the base for `Game.ini`.
+1. Uncomment (remove the `#` in the filename) the configs you want to include in the final config. Edit the configs if you want or add your own.
+1. Run `build.bat`.
+1. Check your `Game.ini` for changes.
+
 
 ### Existing directory structure
-* Backups - backups of Game.ini
-* Default - included parts of no modded config
-* Mods - included parts of modded config
-* Templates - not included parts for Mods and Default directories
-* MyMods - parts for mods you developing now
-* Private - parts you dont want to share, like server name, password
-* Builder.ini - builder config
-* Game.Template.ini - base for your config
+
+* `Builder.ini` - application config
+* `config/Game.Template.ini` - base for your config
+* `config/Backups` - backups of previous `Game.ini`
+* `config/Default` - parts of vanilla config
+* `config/Mods` - parts of modded config
+* `config/MyMods` - parts for mods you developing now
+* `config/Private` - parts you dont want to share, like server name, password, admin ids
+
 
 ### How to share templates for your mod (or default template)
-1. Make fork of project
-1. Clone your fork
-1. Do changes
-1. Commit
-1. Push
-1. Make pull request
+
+1. Fork the project
+2. Clone your fork
+3. Make changes
+4. Commit the changes
+5. Push the changes to your fork
+6. Create a pull request

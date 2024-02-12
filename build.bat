@@ -1,3 +1,3 @@
 @echo off
-python build.py
+python -m builder
 pause
