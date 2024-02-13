@@ -127,6 +127,12 @@ MaxPlayers=8
 
 </details>
 
+
+### System requirements
+* OS: Windows (just did not tested on linux)
+* Python: 3.12
+
+
 ### How to use
 
 1. Clone the project or download the archive to the directory of your choice.
