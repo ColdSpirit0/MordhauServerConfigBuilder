@@ -136,6 +136,7 @@ MaxPlayers=8
 ### How to use
 
 1. Clone the project or download the archive to the directory of your choice.
+1. Open command line in the project directory and run `pip install -r requirements.txt`
 1. In `Builder.ini`:
     - Specify the path to your `Game.ini` file.
     - Add or remove the `ModsDir` key-value pair to specify which directories the script will search for ini files.

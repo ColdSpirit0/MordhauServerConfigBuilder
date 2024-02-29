@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 import time
 
-from .ini_parser import IniParser
+from unreal_ini_parser import IniParser
 from .config import Config
 
 from .print_extra import print_warning, print_error

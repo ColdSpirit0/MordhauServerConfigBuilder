@@ -1,0 +1,2 @@
+requests==2.31.0
+unreal_ini_parser==1.0.0

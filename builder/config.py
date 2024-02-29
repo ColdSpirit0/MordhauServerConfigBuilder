@@ -1,5 +1,5 @@
 from pathlib import Path
-from .ini_parser import IniParser
+from unreal_ini_parser import IniParser
 
 
 class Config():
