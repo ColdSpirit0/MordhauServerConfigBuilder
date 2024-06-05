@@ -137,7 +137,6 @@ MaxPlayers=8
 
 
 ### System requirements
-* OS: Windows (just did not tested on linux)
 * Python: 3.12
 
 
