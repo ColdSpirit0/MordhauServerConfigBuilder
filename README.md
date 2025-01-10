@@ -45,6 +45,14 @@ Designed to help configuring server config, manage existing and your own mod con
 <details>
 <summary>Spoiler</summary>
 
+```mermaid
+graph LR
+    A[Game.Template.ini] --> C{Game.ini}
+    B[Default/HordeMaps.ini] --> C
+    D[Mods/ServerSideCommands.ini] --> C
+    E[Mods/YodaSeller.ini] --> C
+```
+
 #### Game. Template.ini
 
 ```ini
@@ -129,7 +137,6 @@ MaxPlayers=8
 
 
 ### System requirements
-* OS: Windows (just did not tested on linux)
 * Python: 3.12
 
 
